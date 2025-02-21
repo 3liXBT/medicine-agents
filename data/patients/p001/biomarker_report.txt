@@ -9,7 +9,3 @@ Molecular Findings:
     ALK Rearrangement: Negative.
     ROS1 Rearrangement: Negative.
     PD-L1 Expression: Low (TPS 5%).
-
-Interpretation:
-    Tumor is EGFR mutation-positive (exon 19 deletion), qualifying for first-line osimertinib (Tagrisso).
-    No evidence of ALK/ROS1 alterations or high PD-L1 expression.

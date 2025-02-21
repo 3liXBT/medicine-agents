@@ -36,12 +36,16 @@ class Patient:
 @dataclass
 class AgentPrompt:
     prompt: str
-    parameters: list[str] = field(default_factory=list)
+    parameters: list[str] = field(
+        default_factory=list
+    )  # defines the parameters as an empty list without instantiating it
 
     def apply(self, parameters: dict[str, str]) -> str:
         prompt = self.prompt
         for key, value in parameters.items():
-            prompt = prompt.replace("{{" + key + "}}", value)
+            prompt = prompt.replace(
+                "{{" + key + "}}", value
+            )  # replace "{{BiomarkersReport}}" with the actual biomarker report
         return prompt
 
 
@@ -80,6 +84,16 @@ def get_patient_data(patient_id: str, cursor) -> Patient:
 
 
 def load_patient_data_from_sqlite_file(path):
+    """
+    Generates a map from a patient id to the patient data.
+
+    {
+        "P001": Patient(patient_id="P001", biomarker_report="...", imaging_report="...", pathology_report="..."),
+        "P002": Patient(patient_id="P002", biomarker_report="...", imaging_report="...", pathology_report="..."),
+        ...
+    }
+
+    """
     import sqlite3
 
     conn = sqlite3.connect(path)
@@ -133,8 +147,10 @@ class Agent:
         self.client = Groq()
 
     def run(self, parameters: dict[str, str]) -> str:
-        message = self.prompt.apply(parameters)
-        chat_completion = self.client.chat.completions.create(
+        message = self.prompt.apply(
+            parameters
+        )  # call the apply method of the AgentPrompt class
+        chat_completion = self.client.chat.completions.create(  # call the LLM with the materialized prompt
             messages=[
                 {
                     "role": "user",
@@ -148,9 +164,10 @@ class Agent:
         )
 
         answer = chat_completion.choices[0].message.content
-        return remove_think_tags(answer)
+        return remove_think_tags(answer)  # remove the <think> tags from the response
 
 
+# for logging purposes
 @dataclass
 class RunResult:
     biomarker_report: str
@@ -168,14 +185,6 @@ def main():
     oncologist_agent = Agent(model_name=model_name, prompt=crew_prompts.oncologist)
 
     patient_id_to_patient = {}
-
-    def mock_run_patient(patient_id: str) -> RunResult:
-        return RunResult(
-            biomarker_report="```yaml\nBiomarkerUVABot: true\n```",
-            imaging_report="```yaml\nImagingUVABot: true\n```",
-            pathology_report="```yaml\nPathologyUVABot: true\n```",
-            oncologist_report="```yaml\nOncologistUVABot: true\n```",
-        )
 
     def run_patient(patient_id: str) -> RunResult:
         patient = patient_id_to_patient[patient_id]
@@ -202,12 +211,14 @@ def main():
             imaging_report=result["ImagingUVABot"],
             pathology_report=result["PathologyUVABot"],
             oncologist_report=final_report,
-        )
+        )  # logging in streamlit
         return run_result
 
     st.sidebar.title(":orange[__UVA Bot__] 🤖")
 
-    uploaded_file = st.sidebar.file_uploader("Choose a file")
+    uploaded_file = st.sidebar.file_uploader(
+        "Choose a file"
+    )  # upload the file in the UI in streamlit
     if uploaded_file is not None:
         with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
             tmp_file.write(uploaded_file.read())
@@ -216,12 +227,20 @@ def main():
             patient_id_to_patient = load_patient_data_from_sqlite_file(db_path)
 
         patient_ids = list(patient_id_to_patient.keys())
-        patient_id = st.sidebar.selectbox("Select Patient ID", patient_ids)
+        patient_id = st.sidebar.selectbox(
+            "Select Patient ID", patient_ids
+        )  # select the patient id from the UI in streamlit
 
         patient = patient_id_to_patient[patient_id]
 
+        # documentation is on Streamlit docs website
+
         tab1, tab2, tab3 = st.tabs(
-            ["Biomarkers Report", "Imaging Report", "Pathology Report"]
+            [
+                "Biomarkers Report",
+                "Imaging Report",
+                "Pathology Report",
+            ]  # visualize the reports of the patient
         )
 
         with tab1:
@@ -233,7 +252,7 @@ def main():
         with tab3:
             st.text(patient.pathology_report)
 
-        st.divider()
+        st.divider()  # put a line separator to separate the inputs from the outputs visually
 
         submit = st.sidebar.button("Submit")
         if submit:

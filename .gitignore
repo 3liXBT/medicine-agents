@@ -2,3 +2,4 @@ patients.db
 notebook.ipynb
 .conda
 .env
+__pycache__
