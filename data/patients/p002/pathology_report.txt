@@ -1,0 +1,29 @@
+Patient Information:
+    Name: Jane Doe
+    Age: 52
+    Medical Record Number: 123456
+    Specimen Type: Core biopsy (left breast mass and left axillary lymph node)
+    Date of Report: October 15, 2023
+
+Gross Description:
+    Breast mass: Firm, irregular tissue fragment (2.5 cm).
+    Lymph node: Tan-white, enlarged (1.8 cm).
+
+Microscopic Findings:
+    Breast Mass: Invasive ductal carcinoma, histological grade 3 (Nottingham score: 3+3+3=9/9).
+        Tubule formation: 3 (<10% tubules).
+        Nuclear pleomorphism: 3 (Marked variation).
+        Mitotic count: 3 (>20 mitoses/10 HPF).
+        Lymphovascular invasion present.
+    Lymph Node: Metastatic carcinoma (2/4 nodes involved).
+
+Immunohistochemistry:
+    HER2: Positive (3+).
+    ER/PR: Negative.
+
+Diagnosis:
+    Invasive ductal carcinoma, left breast, HER2-positive, ER-/PR-, grade 3.
+    Metastatic carcinoma in left axillary lymph nodes (pT2N1).
+
+Recommendation:
+    HER2-targeted therapy (trastuzumab/Herceptin) combined with chemotherapy (e.g., paclitaxel + carboplatin) is strongly indicated.

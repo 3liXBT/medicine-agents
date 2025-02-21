@@ -1,0 +1,13 @@
+Patient Name: John Doe
+MRN: 123456
+Date: October 10, 2023
+Modality: CT Chest/Abdomen, PET-CT
+
+Findings:
+    Lung Parenchyma: A 3.2 cm spiculated mass in the right upper lobe with adjacent pleural retraction. Mild contrast enhancement on CT.
+    Lymph Nodes: Enlarged right hilar (1.5 cm) and ipsilateral mediastinal (1.8 cm) lymph nodes. PET shows hypermetabolic activity (SUVmax 12.5).
+    Distant Metastases: A 1.0 cm left adrenal nodule with moderate FDG avidity (SUVmax 6.8). No osseous or cerebral metastases.
+
+Impression:
+    Primary right upper lobe lung malignancy (cT2aN2M1a, Stage IVA).
+    Metastatic involvement of the left adrenal gland.

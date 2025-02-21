@@ -1,0 +1,16 @@
+Patient Information:
+    Name: Jane Doe
+    Age: 52
+    Medical Record Number: 123456
+    Specimen Type: Core biopsy (left breast mass)
+    Date of Analysis: October 12, 2023
+
+Biomarker Analysis:
+    Estrogen Receptor (ER): Negative (0% nuclear staining).
+    Progesterone Receptor (PR): Negative (0% nuclear staining).
+    HER2/neu Immunohistochemistry (IHC): 3+ (Strong, complete membrane staining in >10% of tumor cells).
+    HER2/neu FISH: Amplified (HER2/CEP17 ratio = 4.5, average HER2 copy number = 8.2).
+    Ki-67 Proliferation Index: 35% (High proliferative activity).
+
+Interpretation:
+    HER2-positive (ER-/PR-) invasive breast carcinoma. High Ki-67 supports aggressive tumor biology. HER2 overexpression/amplification confirms eligibility for HER2-targeted therapy (e.g., trastuzumab/Herceptin).

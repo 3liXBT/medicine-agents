@@ -1,0 +1,16 @@
+Patient Name: John Doe
+MRN: 123456
+Specimen: Right upper lobe lung biopsy
+Date: October 11, 2023
+
+Histopathology:
+    Diagnosis: Moderately differentiated adenocarcinoma.
+    Morphology: Glandular structures with mucin production, nuclear atypia, and focal necrosis.
+
+Immunohistochemistry (IHC):
+    TTF-1: Strongly positive (confirming lung origin).
+    CK7: Positive.
+    p40: Negative (rules out squamous differentiation).
+
+Molecular Summary:
+    Consistent with EGFR-driven adenocarcinoma.

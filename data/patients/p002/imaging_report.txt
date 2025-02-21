@@ -1,0 +1,21 @@
+Patient Information:
+    Name: Jane Doe
+    Age: 52
+    Gender: Female
+    Medical Record Number: 123456
+    Date of Exam: October 10, 2023
+
+Exam Type:
+    Diagnostic Mammography
+    Breast Ultrasound
+    Breast MRI
+
+Findings:
+    Mammography: A 2.5 cm irregular, spiculated mass in the upper outer quadrant of the left breast. Associated microcalcifications noted.
+    Ultrasound: Hypoechoic mass with angular margins and posterior acoustic shadowing. Suspicious left axillary lymphadenopathy (1.8 cm node with loss of fatty hilum).
+    Breast MRI: Heterogeneously enhancing mass (2.6 cm) with rapid initial uptake and washout kinetics. Confirmed axillary lymph node involvement.
+
+BI-RADS Category: 5 (Highly suggestive of malignancy).
+
+Impression:
+    Imaging findings are consistent with primary breast malignancy (left breast, upper outer quadrant) and regional lymph node metastasis. Core biopsy recommended for histopathological confirmation.
