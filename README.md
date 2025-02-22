@@ -1,7 +1,15 @@
-```yaml
+---
+title: Streamlit
+emoji: 🔥
+colorFrom: indigo
+colorTo: green
 sdk: streamlit
-sdk_version: 1.25.0 # The latest supported version
-```
+sdk_version: 1.42.2
+app_file: main.py
+pinned: true
+license: mit
+---
+
 # Medicine Agents
 
 This repo contains the code to run multi-agent system.
