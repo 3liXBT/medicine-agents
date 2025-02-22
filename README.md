@@ -1,3 +1,7 @@
+```yaml
+sdk: streamlit
+sdk_version: 1.25.0 # The latest supported version
+```
 # Medicine Agents
 
 This repo contains the code to run multi-agent system.
